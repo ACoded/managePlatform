@@ -26,7 +26,7 @@
     </div>
     <div class="scroll-outer" ref="scrollOuter" @DOMMouseScroll="handlescroll" @mousewheel="handlescroll">
       <div ref="scrollBody" class="scroll-body" :style="{left: tagBodyLeft + 'px'}">
-        <draggable v-model="list" >
+        <!--<draggable v-model="list" >-->
         <transition-group name="taglist-moving-animation">
           <Tag
             type="dot"
@@ -43,7 +43,7 @@
             @contextmenu.prevent.native="contextMenu(item, $event)"
           >{{ showTitleInside(item) }}</Tag>
         </transition-group>
-        </draggable>
+        <!--</draggable>-->
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@
 <script>
 import { showTitle, routeEqual } from '@/libs/util'
 import beforeClose from '@/router/before-close'
-import draggable from 'vuedraggable'
+//import draggable from 'vuedraggable'
 
 export default {
   name: 'TagsNav',
@@ -79,9 +79,9 @@ export default {
       }
     }
   },
-  components: {
+  /*components: {
     draggable
-  },
+  },*/
   computed: {
     currentRouteObj () {
       const { name, params, query } = this.value
